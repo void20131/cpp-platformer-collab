@@ -1,7 +1,7 @@
 # ?= lets you override from the terminal
 CXX      ?= g++
-CXXFLAGS ?= -std=c++20 -Wall -Wextra -Wpedantic
-LDFLAGS  ?=
+CXXFLAGS ?= -std=c++20 -Wall -Wextra -Wpedantic -Wshadow -O2 -flto -I$(HOME)/.local/include
+LDFLAGS  ?= -L$(HOME)/.local/lib64 -Wl,-rpath,$(HOME)/.local/lib64
 LDLIBS   ?= -lsfml-graphics -lsfml-window -lsfml-system
 
 MODE  ?= release
